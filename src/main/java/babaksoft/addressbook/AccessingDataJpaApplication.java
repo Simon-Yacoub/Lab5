@@ -19,39 +19,39 @@ public class AccessingDataJpaApplication {
         SpringApplication.run(AccessingDataJpaApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner addressbook(BuddyInfoRepository repository) {
-        return (args) -> {
-            BuddyInfo gabe = new BuddyInfo("Gabe", "Caledon", "55555555");
-            BuddyInfo spongebob = new BuddyInfo("SpongeBob", "BikiniBottom", "1800-No this is patrick");
-            repository.save(spongebob);
-            repository.save(gabe);
-
-
-            // fetch address book
-            log.info("Buddies found with findAll():");
-            log.info("-------------------------------");
-            for (BuddyInfo aBuddy : repository.findAll()) {
-                log.info(aBuddy.toString());
-            }
-            log.info("");
-
-            // fetch an individual customer by ID
-            BuddyInfo aBuddy = repository.findById(1L);
-            log.info("Buddy found with findById(1L):");
-            log.info("--------------------------------");
-            log.info(aBuddy.toString());
-            log.info("");
-
-            // fetch Buddy by name
-            log.info("Buddy found with findByName('Gabe'):");
-            log.info("--------------------------------------------");
-            repository.findByName("Gabe").forEach(bauer -> {
-                log.info(bauer.toString());
-            });
-            log.info("");
-        };
-    }
+//    @Bean
+//    public CommandLineRunner buddy(BuddyInfoRepository repository) {
+//        return (args) -> {
+//            BuddyInfo gabe = new BuddyInfo("Gabe", "Caledon", "55555555");
+//            BuddyInfo spongebob = new BuddyInfo("SpongeBob", "BikiniBottom", "1800-No this is patrick");
+//            repository.save(spongebob);
+//            repository.save(gabe);
+//
+//
+//            // fetch address book
+//            log.info("Buddies found with findAll():");
+//            log.info("-------------------------------");
+//            for (BuddyInfo aBuddy : repository.findAll()) {
+//                log.info(aBuddy.toString());
+//            }
+//            log.info("");
+//
+//            // fetch an individual customer by ID
+//            BuddyInfo aBuddy = repository.findById(1L);
+//            log.info("Buddy found with findById(1L):");
+//            log.info("--------------------------------");
+//            log.info(aBuddy.toString());
+//            log.info("");
+//
+//            // fetch Buddy by name
+//            log.info("Buddy found with findByName('Gabe'):");
+//            log.info("--------------------------------------------");
+//            repository.findByName("Gabe").forEach(bauer -> {
+//                log.info(bauer.toString());
+//            });
+//            log.info("");
+//        };
+//    }
 
 
 }
