@@ -44,7 +44,7 @@ public class AccessingDataJpaApplication {
             log.info("");
 
             // fetch Buddy by name
-            log.info("Buddy found with findByLastName('Gabe'):");
+            log.info("Buddy found with findByName('Gabe'):");
             log.info("--------------------------------------------");
             repository.findByName("Gabe").forEach(bauer -> {
                 log.info(bauer.toString());
