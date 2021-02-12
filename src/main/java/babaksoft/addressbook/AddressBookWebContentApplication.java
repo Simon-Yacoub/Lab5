@@ -13,16 +13,16 @@ public class AddressBookWebContentApplication {
         SpringApplication.run(AccessingDataJpaApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner addressbook(AddressBookRepository repository) {
-        return (args) -> {
-            BuddyInfo gabe = new BuddyInfo("Gabe", "Caledon", "55555555");
-            BuddyInfo spongebob = new BuddyInfo("SpongeBob", "BikiniBottom", "1800-No this is patrick");
-            AddressBook ab = new AddressBook();
-            ab.addBuddy(gabe);
-            ab.addBuddy(spongebob);
-            repository.save(ab);
-        };
-    }
+//    @Bean
+//    public CommandLineRunner addressbook(AddressBookRepository repository) {
+//        return (args) -> {
+//            BuddyInfo gabe = new BuddyInfo("Gabe", "Caledon", "55555555");
+//            BuddyInfo spongebob = new BuddyInfo("SpongeBob", "BikiniBottom", "1800-No this is patrick");
+//            AddressBook ab = new AddressBook();
+//            ab.addBuddy(gabe);
+//            ab.addBuddy(spongebob);
+//            repository.save(ab);
+//        };
+//    }
 
 }
